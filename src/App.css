@@ -1,0 +1,39 @@
+
+/* This file can be used for custom app-wide styles */
+/* Most styling is handled by Tailwind CSS */
+
+.status-badge-success {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background-color: #dcfce7;
+  color: #16a34a;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge-warning {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background-color: #fef9c3;
+  color: #ca8a04;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge-danger {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background-color: #fee2e2;
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}

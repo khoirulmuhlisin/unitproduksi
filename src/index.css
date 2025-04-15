@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 217 10% 50%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 10% 25%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 10% 25%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full hover:bg-muted-foreground/30 transition-colors;
+  }
+
+  /* Custom selection */
+  ::selection {
+    @apply bg-primary/20 text-primary-foreground;
+  }
+}
+
+@layer components {
+  .animated-border {
+    @apply relative after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_0_1px_rgba(0,0,0,0.05)] hover:after:shadow-[0_0_0_1px_rgba(0,0,0,0.1)] after:transition-shadow after:duration-300;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center justify-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-badge-success {
+    @apply status-badge bg-green-100 text-green-800;
+  }
+
+  .status-badge-warning {
+    @apply status-badge bg-amber-100 text-amber-800;
+  }
+
+  .status-badge-danger {
+    @apply status-badge bg-red-100 text-red-800;
+  }
+
+  .status-badge-info {
+    @apply status-badge bg-blue-100 text-blue-800;
+  }
+
+  .page-transition-enter {
+    @apply opacity-0;
+  }
+
+  .page-transition-enter-active {
+    @apply opacity-100 transition-opacity duration-300;
+  }
+
+  .page-transition-exit {
+    @apply opacity-100;
+  }
+
+  .page-transition-exit-active {
+    @apply opacity-0 transition-opacity duration-200;
+  }
+}
